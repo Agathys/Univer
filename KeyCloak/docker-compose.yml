@@ -6,10 +6,8 @@ services:
   restart: always
   volumes:
    - ./data/postgres:/var/lib/postgresql/data
-  environment:
-   POSTGRES_DB: keycloak
-   POSTGRES_USER: keycloak
-   POSTGRES_PASSWORD: WJIFji34f
+  env_file:
+   - .env
 
  keycloak:
   image: jboss/keycloak:latest
