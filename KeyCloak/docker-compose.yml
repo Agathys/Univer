@@ -16,13 +16,7 @@ services:
   restart: always
   ports:
    - '8081:8080'
-  environment:
-   DB_VENDOR: postgres
-   DB_ADDR: postgres
-   DB_DATABASE: keycloak
-   DB_USER: keycloak
-   DB_SCHEMA: public
-   DB_PASSWORD: WJIFji34f
-   PROXY_ADDRESS_FORWARDING: "true"
+  env_file:
+   - .env
   depends_on:
    - postgres
