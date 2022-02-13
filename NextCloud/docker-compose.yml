@@ -10,15 +10,15 @@ services:
     links:
       - db
     volumes:
-      - nextcloud:/var/www/html
+      - ./nextcloud:/var/www/html
     env_file:
       - .env
-     
+
   db:
     image: mariadb:10.5
     restart: always
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
-      - db:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     env_file:
       - .env
