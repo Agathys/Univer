@@ -7,8 +7,8 @@ services:
    restart: always
    volumes:
    - ./prometheus.yml:/etc/prometheus/prometheus.yml
-  # ports:
-  #  - "9090:9090"
+   ports:
+    - "9090:9090"
    network_mode: "host"
    privileged: true
 
@@ -18,7 +18,7 @@ services:
    ports:
     - "3000:3000"
    volumes:
-     - ./grafana.ini:/opt/bitnami/grafana/conf/grafana.ini
+     - "./grafana.ini:/opt/bitnami/grafana/conf/grafana.ini"
    network_mode: "host" 
    privileged: true 
 
